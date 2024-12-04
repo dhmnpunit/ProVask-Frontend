@@ -11,7 +11,8 @@ export default {
         primary: '#E9EFEC',
         green200: '#C4DAD2',
         green600: '#366E52',
-        green700: '#4B7E65'
+        green700: '#4B7E65',
+        green800: '#4E826A'
       },
       height: {
         hero: '732px',
@@ -19,17 +20,28 @@ export default {
         "feature-height": '348px',
         "map-feature-section": '784px',
         "mini-map-height": '504px',
-        "mini-region-info-height": '504px'
+        "mini-region-info-height": '504px',
+        "featured-games-section": '620px',
+        "games-card": '378px',
+        "virtual-library": "680px",
+        "mini-resource-card": "98px",
+        "footer": "200px"
       },
       width: {
         "feature-width": '996px',
         "mini-map-width": '504px',
-        "mini-region-info-width": '444px'
+        "mini-region-info-width": '444px',
+        "games-card": '407px',
+        "mini-resource-card": "407px"
       },
       maxWidth: {
         647: '647px',
         629: '629px',
         "feature-description": '580px'
+      },
+      fontSize: {
+        "14px": '14px',
+        "160px": '160px',
       }
     },
   },

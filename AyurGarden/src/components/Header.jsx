@@ -4,7 +4,7 @@ import React from 'react'
 
 function Header() {
   return (
-    <div className="fixed top-0 left-0 flex h-16 px-12 w-full bg-white items-center shadow-sm justify-between">
+    <div className="fixed top-0 left-0 z-50 flex h-16 px-12 w-full bg-white items-center shadow-sm justify-between">
         <div>
             <img src={Logo} alt="" />
         </div>

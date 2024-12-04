@@ -16,7 +16,7 @@ function Hero() {
             </div>
         </div>
         <div>
-            <img src={HeroPlant} alt="Plant Image" className="transition-transform duration-500 ease-in-out transform hover:scale-105" />
+            <img src={HeroPlant} alt="Plant Image" className="" />
         </div>
         
     </div>
