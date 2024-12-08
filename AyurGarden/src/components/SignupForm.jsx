@@ -1,9 +1,9 @@
 
 
 import React from 'react'
-import { InputField } from './InputField'
-import HollowButton from '../../components/HollowButton'
-import GreenButton from '../../components/GreenButton'
+import { InputField } from '../pages/LoginSignupPage/InputField'
+import HollowButton from './HollowButton'
+import GreenButton from './GreenButton'
 
 export const SignupForm = ({ toggleForm }) => {
   return (
