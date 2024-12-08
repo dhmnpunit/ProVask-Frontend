@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 function MiniMapInfo({
     region = "Region",
@@ -20,7 +21,10 @@ function MiniMapInfo({
                 <li>{commonlyUsedHerb3}</li>
             </ul>           
         </div>
-        <button className="bg-accent px-4 py-2 w-full h-11 rounded-xl text-white hover:bg-green-800">Explore Region</button>
+        <Link to="/signin">
+          <button className="bg-accent px-4 py-2 w-full h-11 rounded-xl text-white hover:bg-green-800">Explore Region</button>
+        </Link>
+        
     </div>
   )
 }

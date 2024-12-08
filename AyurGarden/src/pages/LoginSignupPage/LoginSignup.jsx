@@ -1,8 +1,8 @@
 
 import React, { useState } from 'react'
 import Header from '../../components/Header'
-import { SignupForm } from '../../components/SignupForm'
-import { LoginForm } from '../../components/LoginForm'
+import { SignupForm } from './SignUpForm'
+import { LoginForm } from './LoginForm'
 
 export const LoginSignup = () => {
   const [isLogin, setIsLogin] = useState(true)

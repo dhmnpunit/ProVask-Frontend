@@ -1,4 +1,5 @@
 
+import Dropdown from "./components/Dropdown";
 import Header from "./components/Header";
 import LandingPage from "./pages/LandingPage"
 import Learn from "./pages/Learn"
@@ -9,18 +10,19 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 function App() {
   return (
     <>
-      <BrowserRouter>
-      <div className="min-h-screen bg-background">
-        <Header/>
-        <Routes>
-          <Route path="/" element={<LandingPage/>} />
-          <Route path="/learn" element={<Learn/>} />
-          <Route path="/signin" element={<LoginSignup/>} />
-        </Routes>
-      </div>
-    </BrowserRouter>
+  <BrowserRouter>
+    <div className="min-h-screen bg-background">
+      <Header/>
+      <Routes>
+        <Route path="/" element={<LandingPage/>} />
+        <Route path="/learn" element={<Learn/>} />
+        <Route path="/signin" element={<LoginSignup/>} />
+      </Routes>
+    </div>
+  </BrowserRouter>
 
-    </> 
+
+  </>
   );
 
 }

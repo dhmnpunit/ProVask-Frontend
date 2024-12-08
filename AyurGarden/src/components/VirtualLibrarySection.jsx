@@ -3,6 +3,7 @@ import MiniResourceCard from './MiniResourceCard'
 import ArticleImage from '../assets/article.svg'
 import VideoImage from '../assets/video.svg'
 import EBookImage from '../assets/ebook.svg'
+import { Link } from 'react-router-dom'
 
 function VirtualLibrarySection() {
   return (
@@ -13,7 +14,9 @@ function VirtualLibrarySection() {
             <MiniResourceCard cardImage={VideoImage} cardTitle='Medicinal Plants of the Amazon' cardType='Video'/>
             <MiniResourceCard cardImage={EBookImage} cardTitle='The Complete Herbal Guide' cardType='E-Book'/>
         </div>
-        <button className="bg-accent px-4 py-2 w-30 h-11 rounded-xl text-white hover:bg-green-800 ease-out">Explore Full Library</button>
+        <Link to="/signin">
+          <button className="bg-accent px-4 py-2 w-30 h-11 rounded-xl text-white hover:bg-green-800 ease-out">Explore Full Library</button>
+        </Link>
 
     </div>
   )
