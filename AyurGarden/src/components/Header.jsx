@@ -1,4 +1,4 @@
-import Logo from "../assets/react.svg";
+import Logo from "../assets/ayurgarden-logo.svg";
 import { Link } from "react-router-dom";
 import React from 'react'
 
@@ -6,9 +6,9 @@ function Header() {
   return (
     <div className="fixed top-0 left-0 z-50 flex h-16 px-12 w-full bg-white items-center shadow-sm justify-between">
 
-        <div>
+        <div className="ml-4">
           <Link to="/" className="text-accent hover:text-black cursor-pointer transition-colors">
-            <img src={Logo} alt="" />
+            <img className="h-10 w-10" src={Logo} alt="" />
           </Link>
         </div>
 
@@ -16,7 +16,7 @@ function Header() {
           <Link to="/learn" className="text-accent hover:text-black cursor-pointer transition-colors">
             <span>Learn</span>
           </Link>
-          <Link to="/map" className="text-accent hover:text-black cursor-pointer transition-colors">
+          <Link to="/about" className="text-accent hover:text-black cursor-pointer transition-colors">
             <span>About us</span>
           </Link>
           <Link to="/signin" className="flex items-center space-x-1 text-gray-600 hover:text-primary transition-colors">

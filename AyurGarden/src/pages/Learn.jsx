@@ -11,7 +11,6 @@ import Footer from '../components/Footer'
 function Learn() {
   return (
     <>  
-      <Header/>
       <div className='pt-28 px-10 '>
         <LearnHero/>
         <LearnFeaturedCourses/>
@@ -21,7 +20,7 @@ function Learn() {
         <LearnHerbProfiles/>
       </div>
       <Footer/>
-    
+
     </>
   )
 }

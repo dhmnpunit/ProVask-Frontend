@@ -1,18 +1,14 @@
-import React from 'react'
 
-export const InputField = ({
-    label="label",
-    placeholder="placeholder",
-    type="text",
-    id = 'id',
-    name = 'name',
-}) => {
-  return (
-
-    <div className='mb-4'>
-        <label htmlFor='username' className='block text-sm font-medium text-gray-900'>{label}</label>
-        <input type={type} id={id} name={name} placeholder={placeholder} className='mt-1 px-3 py-2 block w-full border border-gray-300 rounded-md shadow-sm focus:ring-green-600 focus:border-green-600 sm:text-sm'/>
-    </div> 
-
-  )
-}
+export const InputField = ({ label, type, placeholder, value, onChange, name }) => (
+  <div className="mb-4">
+    <label className="block text-gray-700 text-sm font-bold mb-2">{label}</label>
+    <input
+      type={type}
+      placeholder={placeholder}
+      name={name}
+      value={value}
+      onChange={onChange}
+      className="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-green-500"
+    />
+  </div>
+);

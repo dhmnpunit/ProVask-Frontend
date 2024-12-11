@@ -1,37 +1,101 @@
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 
-import React, { useState } from 'react'
-import { InputField } from './InputField'
+const InputField = ({ label, type, placeholder, value, onChange, name }) => (
+  <div className="mb-4">
+    <label className="block text-gray-700 text-sm font-bold mb-2">{label}</label>
+    <input
+      type={type}
+      placeholder={placeholder}
+      name={name}
+      value={value}
+      onChange={onChange}
+      className="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-green-500"
+    />
+  </div>
+);
 
-export const LoginForm = ({ toggleForm }) => {
-  const [rememberMe, setRememberMe] = useState(false)
+const LoginForm = ({ toggleForm }) => {
+  const [formData, setFormData] = useState({
+    email: '',
+    password: '',
+    rememberMe: false
+  });
 
-  const handleRememberMeClick = () => {
-    setRememberMe(!rememberMe)
-  }
+  const handleChange = (e) => {
+    const { name, value, type, checked } = e.target;
+    setFormData(prev => ({
+      ...prev,
+      [name]: type === 'checkbox' ? checked : value
+    }));
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log('Login form submitted:', formData);
+  };
 
   return (
-    <div>
-        <form className='w-login-signup-form h-rel p-8 bg-white border rounded-xl border-gray-300 shadow-lg flex flex-col'>
-            <div className='flex flex-col items-center mt-10'>
-                <h1 className='text-accent font-bold text-3xl'>Welcome Back</h1>
-                <p className='text-gray-500 mt-4'>Login to your AyurGarden account</p>
-            </div>
-            <div className='mt-8'>
-                <InputField label='Email' placeholder='john@example.com' type='email'/>
-                <InputField label='Password' placeholder='••••••••' type='password'/>
-            </div>
-            <div className='flex justify-between text-sm mb-2 -mt-2'>
-                <div className='flex items-center gap-2 cursor-pointer' onClick={handleRememberMeClick}>
-                    <div className={`h-4 w-4 border border-gray-600 rounded-sm ${rememberMe ? 'bg-accent' : ''}`}></div>
-                    <span className='font-bold'>Remember me</span>
-                </div>
-                <span className='text-accent hover:text-green600 underline cursor-pointer'>Forgot Password?</span>
-            </div>
-            <button className="bg-accent px-4 py-2 w-30 h-11 rounded-md text-white hover:bg-green-800 ease-out mt-4 mb-10">Login</button>
-            <div className='flex items-center justify-center -mt-4 mb-4'>
-                <p className='text-sm text-gray-600'>Don't have an account? <span className='text-accent font-bold underline hover:text-green600 cursor-pointer' onClick={toggleForm}>Signup!</span></p>
-            </div>
-        </form>
-    </div>
-  )
-}
+    <form onSubmit={handleSubmit} className="w-login-signup-form p-8 bg-white border rounded-xl border-gray-300 shadow-lg">
+      <div className="text-center mb-8">
+        <h1 className="text-accent font-bold text-3xl">Welcome Back</h1>
+        <p className="text-gray-500 mt-4">Login to your AyurGarden account</p>
+      </div>
+
+      <InputField
+        label="Email"
+        type="email"
+        placeholder="john@example.com"
+        name="email"
+        value={formData.email}
+        onChange={handleChange}
+      />
+
+      <InputField
+        label="Password"
+        type="password"
+        placeholder="••••••••"
+        name="password"
+        value={formData.password}
+        onChange={handleChange}
+      />
+
+      <div className="flex items-center justify-between mb-6">
+        <label className="flex items-center">
+          <input
+            type="checkbox"
+            name="rememberMe"
+            checked={formData.rememberMe}
+            onChange={handleChange}
+            className="mr-2"
+          />
+          <span className="text-sm text-gray-600">Remember me</span>
+        </label>
+        <Link to="/forgot-password" className="text-sm text-accent hover:underline">
+          Forgot Password?
+        </Link>
+      </div>
+
+      <button
+        type="submit"
+        className="w-full bg-accent text-white py-2 rounded-md hover:bg-green-800 transition-colors"
+      >
+        Login
+      </button>
+
+      <div className="text-center mt-6">
+        <p className="text-sm text-gray-600">
+          Don't have an account?{' '}
+          <span
+            className="text-accent font-bold underline hover:text-green-800 cursor-pointer"
+            onClick={toggleForm}
+          >
+            Signup!
+          </span>
+        </p>
+      </div>
+    </form>
+  );
+};
+
+export default LoginForm;

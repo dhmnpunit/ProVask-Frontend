@@ -7,7 +7,7 @@ function Features() {
   return (
     <>
     <svg
-        className="w-full h-auto mt-1"
+        className="w-full h-auto transform translate-y-1"
         viewBox="0 0 1440 166"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"

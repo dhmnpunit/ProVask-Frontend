@@ -11,7 +11,6 @@ import Footer from '../components/Footer'
 function LandingPage() {
   return (
     <>
-        <Header/>
         <div className="pt-16">
             <Hero/>
             <Features/>
